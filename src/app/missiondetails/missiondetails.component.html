@@ -1,0 +1,32 @@
+<h1>SpaceX Mission Details</h1>
+
+<div *ngIf="mission">
+    <div class="main-card">
+      <mat-card [ngStyle]="{'background-color':'rgb(250, 235, 215)'}">
+
+        <mat-card-header>
+            <img [ngStyle]="{'position': 'relative', 'right': '0px', 'top': '0px'}" class="example-header-image" src="{{ mission.mission_patch_small }}"/>
+            <div [ngStyle]="{'right': '-300px', 'top': '-16px'}">
+                <mat-card-title [ngStyle]="{'color':'rgb(244, 194, 194)'}"><strong>Mission - </strong> {{ mission.mission_name }}</mat-card-title>
+          <mat-card-subtitle><strong>Name:</strong> {{ mission.mission_name }}</mat-card-subtitle>
+          <mat-card-subtitle><strong>Launch year:</strong> {{ mission.launch_year }}</mat-card-subtitle>
+
+          <mat-card-title [ngStyle]="{'color':'rgb(244, 194, 194)'}"><strong>Rocket</strong></mat-card-title>
+          <mat-card-subtitle><strong>Name:</strong> {{ mission.rocket_name }}</mat-card-subtitle>
+          <mat-card-subtitle><strong>Type:</strong> {{ mission.rocket_type }}</mat-card-subtitle>
+
+          <mat-card-title [ngStyle]="{'color':'rgb(244, 194, 194)'}"><strong>Launch Site</strong></mat-card-title>
+          <mat-card-subtitle><strong>Name:</strong>{{ mission.site_name_long }}</mat-card-subtitle>
+            </div>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <p [ngStyle]="{'color':'rgb(244, 194, 194)'}"><strong>Launch Details</strong></p>
+          <p>{{ mission.details }}</p>
+
+          <p [ngStyle]="{'color':'rgb(244, 194, 194)'}"><strong>More Info on Launch Details</strong></p>
+          <button (click)="mission.video_link">{{ mission.video_link }}</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
